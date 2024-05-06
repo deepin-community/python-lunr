@@ -1,11 +1,8 @@
-[![Build Status](https://github.com/yeraydiazdiaz/lunr.py/workflows/CI/badge.svg?branch=master)](https://github.com/yeraydiazdiaz/lunr.py/actions?workflow=CI)
-[![codecov](https://codecov.io/gh/yeraydiazdiaz/lunr.py/branch/master/graph/badge.svg)](https://codecov.io/gh/yeraydiazdiaz/lunr.py)
-[![Supported Python Versions](https://img.shields.io/pypi/pyversions/lunr.svg)](https://pypi.org/project/lunr/)
-[![PyPI](https://img.shields.io/pypi/v/lunr.svg)](https://pypi.org/project/lunr/)
-[![Read the Docs](https://img.shields.io/readthedocs/lunr.svg)](http://lunr.readthedocs.io/en/latest/)
-[![Downloads](http://pepy.tech/badge/lunr)](http://pepy.tech/project/lunr)
+---
+hide-toc: true
+---
 
-# Lunr.py
+# Lunr.py 🌖
 
 A Python implementation of [Lunr.js](https://lunrjs.com) by [Oliver Nightingale](https://github.com/olivernn).
 
@@ -14,8 +11,6 @@ A Python implementation of [Lunr.js](https://lunrjs.com) by [Oliver Nightingale]
 This Python version of Lunr.js aims to bring the simple and powerful full text search
 capabilities into Python guaranteeing results as close as the original
 implementation as possible.
-
-- [Documentation](http://lunr.readthedocs.io/en/latest/)
 
 ## What does this even do?
 
@@ -29,8 +24,8 @@ to recreate or read the index at the start of your application.
 
 ## Interoperability with Lunr.js
 
-A core objective of Lunr.py is to provide
-[interoperability with the JavaScript version](https://lunr.readthedocs.io/en/latest/lunrjs-interop).
+A core objective of Lunr.py is to [provide interoperability with the JavaScript
+version](lunrjs-interop.md).
 
 An example can be found in the [MkDocs documentation library](http://www.mkdocs.org/).
 MkDocs produces a set of documents from the pages of the documentation and uses
@@ -47,8 +42,12 @@ version read, minimizing start up time of your application.
 
 Each version of lunr.py
 [targets a specific version of lunr.js](https://github.com/yeraydiazdiaz/lunr.py/blob/master/lunr/__init__.py#L12)
-and produces the same results for a
+and produces the same results as it both in Python 2.7 and 3 for
 [non-trivial corpus of documents](https://github.com/yeraydiazdiaz/lunr.py/blob/master/tests/acceptance_tests/fixtures/mkdocs_index.json).
+
+Lunr.py also serializes `Index` instances respecting the
+[`lunr-schema`](https://github.com/olivernn/lunr-schema) which are consumable by
+Lunr.js and viceversa.
 
 ## Installation
 
@@ -60,7 +59,7 @@ An optional and experimental support for other languages thanks to the
 [NTLK corpus licensing clauses](https://github.com/nltk/nltk#redistributing).
 
 Please refer to the
-[documentation page on languages](https://lunr.readthedocs.io/en/latest/languages.html)
+[documentation page on languages](https://lunr.readthedocs.io/en/latest/languages/)
 for more information.
 
 ## Usage
@@ -92,5 +91,13 @@ Lunr provides a convenience `lunr` function to quickly index this set of documen
 [{'ref': 'b', 'score': 0.23576799568081389, 'match_data': <MatchData "studi">}, {'ref': 'a', 'score': 0.2236629211724517, 'match_data': <MatchData "studi">}]
 ```
 
-Please refer to the [documentation](http://lunr.readthedocs.io/en/latest/)
-for more usage examples.
+```{toctree}
+:hidden:
+usage
+indices
+languages
+lunrjs-interop
+changelog
+customisation
+GitHub Repository <https://github.com/yeraydiazdiaz/lunr.py>
+```

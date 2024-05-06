@@ -1,0 +1,22 @@
+From: Carsten Schoenert <c.schoenert@t-online.de>
+Date: Mon, 21 Mar 2022 20:10:17 +0100
+Subject: docs: Use internal resources for intersphinx
+
+Forwarded: Not-Needed
+---
+ docs/conf.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/docs/conf.py b/docs/conf.py
+index e471b9b..1b2ddb5 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -68,6 +68,6 @@ extlinks = {"pypi": ("https://pypi.org/project/%s/", "")}
+ # -- Options for intersphinx -------------------------------------------------
+ #
+ intersphinx_mapping = {
+-    "python": ("https://docs.python.org/3", None),
+-    "sphinx": ("https://www.sphinx-doc.org/", None),
++    "python": ("/usr/share/doc/python3-doc/html", None),
++    "sphinx": ("/usr/share/doc/sphinx-doc/html", None),
+ }
