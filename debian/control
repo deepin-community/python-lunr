@@ -1,15 +1,65 @@
-Source: template-repository
-Section: unknown
+Source: python-lunr
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders:
+ Carsten Schoenert <c.schoenert@t-online.de>,
+Section: python
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends:
+ debhelper-compat (= 13),
+ python3-all,
+Build-Depends-Indep:
+ dh-python,
+ pybuild-plugin-pyproject,
+ python3-hatchling,
+# python3-mock,
+ python3-myst-parser <!nodoc>,
+ python3-nltk,
+# python3-pytest,
+ python3-sphinx <!nodoc>,
+ python3-sphinx-rtd-theme <!nodoc>,
+ sphinx-doc <!nodoc>,
+Rules-Requires-Root: no
+Standards-Version: 4.6.2
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-lunr
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-lunr.git
+Homepage: https://github.com/yeraydiazdiaz/lunr.py
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: python-lunr-doc
+Architecture: all
+Section: doc
+Depends:
+ ${misc:Depends},
+ ${sphinxdoc:Depends}
+Multi-Arch: foreign
+Description: Python implementation of Lunr.js (Documentation)
+ Lunr is a simple full text search solution for situations where deploying a
+ full scale solution like Elasticsearch isn't possible, viable or you're simply
+ prototyping. Lunr parses a set of documents and creates an inverted index for
+ quick full text searches in the same way other more complicated solution.
+ .
+ The trade-off is that Lunr keeps the inverted index in memory and requires you
+ to recreate or read the index at the start of your application.
+ .
+ This package installs the documentation for the library.
+
+Package: python3-lunr
+Architecture: all
+Depends:
+ python3-nltk,
+ ${misc:Depends},
+ ${python3:Depends},
+Suggests: python-lunr-doc
+Description: Python implementation of Lunr.js (Python3 version)
+ This package includes the Python version of Lunr.js aims to bring the simple
+ and powerful full text search capabilities into Python guaranteeing results as
+ close as the original implementation as possible.
+ .
+ Lunr is a simple full text search solution for situations where deploying a
+ full scale solution like Elasticsearch isn't possible, viable or you're simply
+ prototyping. Lunr parses a set of documents and creates an inverted index for
+ quick full text searches in the same way other more complicated solution.
+ .
+ The trade-off is that Lunr keeps the inverted index in memory and requires you
+ to recreate or read the index at the start of your application.
+ .
+ This package contains the Python 3 version of the library.

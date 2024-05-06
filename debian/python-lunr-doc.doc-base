@@ -1,0 +1,9 @@
+Document: python-lunar-doc
+Title: Python implementation of Lunr.js
+Abstract: Powerful full text search like capabilities original implementation 
+ of Lunr.js
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-lunr-doc/html/index.html
+Files: /usr/share/doc/python-lunr-doc/html/*.html
